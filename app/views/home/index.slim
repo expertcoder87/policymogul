@@ -1,23 +1,22 @@
-/! .side-menu
 .page-content
   .container-fluid
     .row
       .col-md-9
         .page-content-inner
           h1 Create a new campaign
-          form
-            .form-group
+          form#regForm
+            .form-group.tab
               label Title
-              input.form-control name="" type="text" /
-            .form-group
-              label Description
+              input.form-control name="fname" placeholder=("Campaign Name") /
+            .form-group.tab
+              label Discription
               textarea.form-control placeholder=("Enter much information here.") 
               small
                 | Surround content with an asterick on each side to make it
                 span style=("font-style: italic;")  Italic.
                 | Surround content with an asterick on each side to make it
                 span style=("font-weight: bold;")  bold.
-            .form-group
+            .form-group.tab
               label This campaign will be accessible to:
               .campaign-box
                 .radio-boxes
@@ -41,12 +40,19 @@
                     span This campaign will be visible to other PloicyMogul users and may be indexed by search engines. Specific documents, collaborators and other information you choose can be made available to campaign collabrator only.
                     input name="radio" type="radio" /
                     span.checkmark
-            .form-group
+            .form-group.tab
               label Tags that describe this campaign:
-              textarea#tags-editor-textarea.tag-editor-hidden-src example,example,example
+              input data-role="tagsinput" type="text" value="Environment(Environmental education),Energy (Policy), Energy (Green Fuel)"
+            div style="overflow:auto;" 
+              div style="float:right;" 
+                button#prevBtn onclick="nextPrev(-1)" type="button"  Previous
+                button#nextBtn onclick="nextPrev(1)" type="button"  Next
+            div style=("text-align:center;margin-top:40px;display: none;") 
+              span.step
+              span.step
+              span.step
+              span.step
       .col-md-3
         h4
           i.fas.fa-long-arrow-alt-left
           | Back to campaign
-  /! .container-fluid
-/! .page-content
